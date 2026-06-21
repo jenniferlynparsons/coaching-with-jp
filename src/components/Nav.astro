@@ -1,0 +1,35 @@
+---
+interface Props {
+  activeNav: 'home' | 'coaching' | 'is-coaching' | 'six-week' | 'topics' | 'about' | 'resume' | 'faq' | 'resources' | 'testimonials' | 'none';
+}
+const { activeNav } = Astro.props;
+---
+<nav id="nav">
+  <ul class="links">
+    <li class:list={[{ active: activeNav === 'home' }]}>
+      <a href="/">Home</a>
+    </li>
+    <li class:list={[{ active: activeNav === 'is-coaching' }]}>
+      <a href="/is-coaching-right-for-me">Is Coaching Right For Me?</a>
+    </li>
+    <li class:list={[{ active: activeNav === 'six-week' }]}>
+      <a href="/six-week-program">6-Week Program</a>
+    </li>
+    <li class:list={[{ active: activeNav === 'topics' }]}>
+      <a href="/topics">Topics</a>
+    </li>
+    <li class:list={[{ active: activeNav === 'faq' }]}>
+      <a href="/faq">FAQ</a>
+    </li>
+    <li class:list={[{ active: activeNav === 'resources' }]}>
+      <a href="/resources">Resources</a>
+    </li>
+    <li class:list={[{ active: activeNav === 'testimonials' }]}>
+      <a href="/testimonials">Testimonials</a>
+    </li>
+    <li class:list={[{ active: activeNav === 'about' }]}>
+      <a href="/about">About JP</a>
+    </li>
+
+  </ul>
+</nav>
