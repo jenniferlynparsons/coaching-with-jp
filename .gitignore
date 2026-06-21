@@ -1,0 +1,7 @@
+_site
+_site/
+.DS_Store
+.sass-cache
+dist/
+node_modules/
+.astro/

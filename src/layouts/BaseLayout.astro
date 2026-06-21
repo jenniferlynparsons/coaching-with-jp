@@ -1,0 +1,48 @@
+---
+import Nav from '../components/Nav.astro';
+import ContactForm from '../components/ContactForm.astro';
+
+interface Props {
+  title: string;
+  activeNav: 'home' | 'coaching' | 'is-coaching' | 'six-week' | 'topics' | 'about' | 'resume' | 'faq' | 'resources' | 'testimonials' | 'none';
+  hasFooter?: boolean;
+  heroHeading?: boolean;
+}
+const { title, activeNav, hasFooter = false, heroHeading = false } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{title}</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+</head>
+<body class:list={['is-preload', { 'hero-heading': heroHeading }]}>
+  <div id="wrapper">
+    <header id="header">
+      <a href="/" class="logo">JP</a>
+    </header>
+    <Nav activeNav={activeNav} />
+    <div id="main">
+      <slot />
+      <ContactForm />
+    </div>
+    {hasFooter && (
+      <footer id="footer">
+        <section>
+          <p class="align-center">Building tools that are useful, engaging, and leave the world a little bit better than when I found it.</p>
+        </section>
+      </footer>
+      <div id="copyright">
+        <ul>
+          <li>&copy; Jennifer Lyn Parsons</li>
+          <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+        </ul>
+      </div>
+    )}
+  </div>
+  <script src="/assets/js/site.js" is:inline></script>
+</body>
+</html>

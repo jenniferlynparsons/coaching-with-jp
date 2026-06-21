@@ -1,0 +1,15 @@
+---
+interface Props {
+  imageSrc: string;
+  imageAlt: string;
+}
+const { imageSrc, imageAlt } = Astro.props;
+---
+<div class="row">
+  <div class="col-7 col-12-medium">
+    <slot />
+  </div>
+  <div class="col-5 clip-circle-container">
+    <img src={imageSrc} class="clip-circle" alt={imageAlt} />
+  </div>
+</div>
