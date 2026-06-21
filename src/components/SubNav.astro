@@ -1,0 +1,15 @@
+---
+interface Link {
+  label: string;
+  anchor: string;
+}
+interface Props {
+  links: Link[];
+}
+const { links } = Astro.props;
+---
+<nav class="subnav">
+  <ul>
+    {links.map(l => <li><a href={`#${l.anchor}`}>{l.label}</a></li>)}
+  </ul>
+</nav>

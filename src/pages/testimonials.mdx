@@ -1,0 +1,27 @@
+---
+title: "Testimonials | Jennifer Lyn Parsons"
+activeNav: "testimonials"
+---
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Testimonial from '../components/Testimonial.astro';
+
+<BaseLayout title={frontmatter.title} activeNav={frontmatter.activeNav}>
+
+<section class="post">
+  <header class="major">
+    <h1>Testimonials</h1>
+  </header>
+
+  <Testimonial
+    quote="I've been getting coaching from JP these past few months and I'm so grateful for her help! I don't think I could've survived the IC -> leadership transition a mere few months from coming back to work after maternity leave without her expertise, kindness and thought partnership."
+    attribution="Pearl Roos, Tech Lead, Truss"
+  />
+
+  <Testimonial
+    quote="I worked with JP as a peer and fellow manager for multiple years. JP became a trusted person I could approach with any issue to receive thoughtful, informed feedback. For example, when I became lead across multiple teams with very different cultural norms and work habits, I was able to learn from JP's experience with promoting cross team collaboration. We also had multiple situations where an engineer who was JP's report at first, transitioned to my project. During the manager handoff process, I was always struck by how the reports that had worked with JP came in having clear career goals and a sense of what their strength and growth edges going forward were in a way that others often did not. Clearly, JP was setting clear goals with folks and helping them own their career journey."
+    attribution="Hana Worku, Senior Consultant, Spantree"
+  />
+</section>
+
+</BaseLayout>
